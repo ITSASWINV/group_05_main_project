@@ -1,0 +1,168 @@
+{% extends 'temp/student_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><center>
+<h2>Predict career </h2><br><br>
+   <form method="post">
+        {% csrf_token %}
+      <table class="table table-borderless">
+            <tr>
+                <td>Python</td>
+                <td><input type="number" name="q1" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Java</td>
+                <td><input type="number" name="q2" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>C++</td>
+                <td><input type="number" name="q3" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>JavaScript</td>
+                <td><input type="number" name="q4" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>c#</td>
+                <td><input type="number" name="q5" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Php</td>
+                <td><input type="number" name="q6" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Ruby</td>
+                <td><input type="number" name="q7" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Swift</td>
+                <td><input type="number" name="q8" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Go</td>
+                <td><input type="number" name="q9" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Rust</td>
+                <td><input type="number" name="q10" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Others</td>
+                <td><input type="number" name="q11" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Software_Development_Experience</td>
+                <td><input type="number" name="q12" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Database_Management</td>
+                <td><input type="number" name="q13" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Networking_Skills</td>
+                <td><input type="number" name="q14" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Web_Development_Experience</td>
+                <td><input type="number" name="q15" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Communication_Skills</td>
+                <td><input type="number" name="q16" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Problem_Solving_Abilities</td>
+                <td><input type="number" name="q17" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Teamwork_Collaboration</td>
+                <td><input type="number" name="q18" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Time_Management</td>
+                <td><input type="number" name="q19" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>Adaptability</td>
+                <td><input type="number" name="q20" class="form-control" required></td>
+            </tr>
+          <tr>
+                <td>CGPA</td>
+                <td><input type="text" name="q21" class="form-control" readonly value="{{ cgpa }}"></td>
+            </tr>
+            <tr>
+            <td>Coursework_Completion_Status </td>
+                <td>
+                    <select name="q22" class="form-control">
+                        <option>-----Select-----</option>
+                        <option value="1">In Progress</option>
+                        <option value="0">Completed</option>
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+            <td>Academic_Achievements</td>
+                <td>
+                    <select name="q23" class="form-control">
+                        <option>-----Select-----</option>
+                        <option value="2">High</option>
+                        <option value="1">Medium</option>
+                        <option value="0">Low</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Personal_Interests</td>
+                <td>
+                    <select name="q24" class="form-control">
+                        <option>-----Select-----</option>
+                        <option value="0">Coding Others</option>
+                        <option value="1">Gaming</option>
+                        <option value="2">Music</option>
+                        <option value="3">Reading</option>
+                        <option value="4">Sports</option>
+                        <option value="5">Travelling</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+            <td>Internship_Experience</td>
+
+                <td><input type="radio" name="q25" value="1" >
+            <label>Yes</label>
+                    <input type="radio" name="q25" value="0" >
+             <label>No</label></td>
+      </tr>
+          <tr>
+            <td>Certifications_Training</td>
+
+                <td><input type="radio" name="q26" value="1" >
+            <label>Yes</label>
+             <input type="radio" name="q26" value="0" >
+             <label>No</label></td>
+            </tr>
+           <tr>
+            <td>Leadership_Experience</td>
+
+                <td><input type="radio" name="q27" value="1" >
+            <label>Yes</label>
+             <input type="radio" name="q27" value="0" >
+             <label>No</label></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Check"class="btn btn-success"></td>
+            </tr>
+        </table>
+    </form>
+</center>
+</body>
+</html>
+{% endblock %}

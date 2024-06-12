@@ -1,0 +1,38 @@
+{% extends 'temp/student_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mock Test Page</title>
+
+</head>
+<body>
+
+{#<div class="container">#}
+    <h2>Mock Test Page</h2>
+    <table   class="table table-borderless table-dark table-striped">
+        <tr>
+            <th>Job Title</th>
+            <th>Company Name</th>
+            <th>Mock Test Link</th>
+            <th>Interview Link</th>
+        </tr>
+
+        {% for i in a %}
+        <tr>
+
+            <td></td>
+            <td></td>
+            <td>{{ i.test_link }}</td>
+            <td>{{ i.interview_link }}</td>
+        </tr>
+        {% endfor %}
+        <!-- Add more rows as needed -->
+    </table>
+{#</div>#}
+
+</body>
+</html>
+{% endblock %}

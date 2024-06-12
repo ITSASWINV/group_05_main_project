@@ -1,0 +1,31 @@
+{% extends 'temp/company_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conduct Test</title>
+</head>
+<body>
+
+<div>
+
+
+
+    <h1>Conduct Test</h1>
+    <form method = 'post'>
+        {% csrf_token %}
+        <label for="testLink">Test Link:</label><br>
+        <input type="url" id="testLink" name="testLink" placeholder="Enter test link" class="form-control" required=""><br>
+
+        <label for="interviewLink">Interview Link:</label><br>
+        <input type="url" id="interviewLink" name="interviewLink" placeholder="Enter interview link"><br>
+
+        <input type="submit" value="Submit" class="btn btn-success">
+    </form>
+</div>
+
+</body>
+</html>
+{% endblock %}

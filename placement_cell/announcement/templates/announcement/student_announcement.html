@@ -1,0 +1,35 @@
+{% extends 'temp/student_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Announcements</title>
+
+</head>
+<body>
+
+
+    <h1>View Announcements</h1>
+    <table   class="table table-bordered">
+        <tr>
+            <th>Job Title</th>
+            <th>Vacancy</th>
+            <th>Date</th>
+        </tr>
+        {% for i in w %}
+            <tr>
+            <td>{{ i.job_id}}</td>
+            <td>{{ i.vacancy }}</td>
+            <td>{{ i.date }}</td>
+            </tr>
+        {% endfor %}
+        <!-- Add more rows as needed -->
+    </table>
+    <!-- Add more announcements as needed -->
+
+
+</body>
+</html>
+{% endblock %}

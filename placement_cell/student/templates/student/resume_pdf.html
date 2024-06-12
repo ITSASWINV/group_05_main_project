@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            {#margin: 20px;#}
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .resume {
+            background: white;
+            {#padding: 20px;#}
+            max-width: 800px;
+            {#margin: auto;#}
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            {#margin-bottom: px;#}
+        }
+        .header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .resume-section {
+            margin-bottom: 10px;
+        }
+        .resume-section h2 {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+        }
+        .resume-section p {
+            margin: 0;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+<style>
+@page {
+    size: A4;
+    margin: 20mm;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF;
+    color: #000;
+}
+/* Add other styles */
+</style>
+
+    <div class="resume">
+        <div class="header">
+{#            <img src="/static/{{ x.photo }}" alt="Profile Picture" width="150px" height="150px">#}
+            <img src="{{ request.scheme }}://{{ request.get_host }}{% static x.photo %}" alt="Profile Picture" width="150px" height="150px">
+
+            <h1>{{ x.name }}</h1>
+            <p>Place, {{ x.place }}</p>
+            <p>Email: {{ x.mail }}</p>
+            <p>Phone: +91{{ x.phone }}</p>
+        </div>
+
+        <div class="resume-section">
+            <h2>Department</h2>
+            <p>{{ x.department }}</p>
+        </div>
+
+        <div class="resume-section">
+            <h2>Joining Year</h2>
+            <p>{{ x.year }}</p>
+        </div>
+
+        <div class="resume-section">
+            <h2>Skills</h2>
+            <p>{{ x.skills }}</p>
+        </div>
+    </div>
+</body>
+</html>

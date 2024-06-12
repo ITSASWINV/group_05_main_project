@@ -1,0 +1,59 @@
+{% extends 'temp/admin_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h1>Placement predictions</h1>
+    <table border="1"  class="table table-bordered">
+        <tr>
+            <th>Student</th>
+            <th>Stream</th>
+            <th>CGPA</th>
+            <th>Internship Status</th>
+            <th>Backlogs</th>
+               <th>Status</th>
+        </tr>
+        {% for i in x %}
+            <tr>
+            <td>{{ i.student.name}}</td>
+            {% if i.stream == '0' %}
+                <td>Electronics And Communication</td>
+             {% elif i.stream == '1' %}
+                <td>Computer Science</td>
+            {% elif i.stream == '2' %}
+                <td>Information Technology</td>
+            {% elif i.stream == '3' %}
+                <td>Mechanical</td>
+            {% elif i.stream == '4' %}
+                <td>Electrical</td>
+            {% elif i.stream == '5' %}
+                <td>Civil</td>
+            {% endif %}
+
+            <td>{{ i.cgpa }}</td>
+                {% if i.internship == 1 %}
+                     <td>Yes</td>
+                {% else %}
+                     <td>Nil</td>
+                {% endif %}
+            {% if i.backlogs == 1 %}
+                 <td>Yes</td>
+                {% else %}
+                 <td>No</td>
+                {% endif %}
+
+            <td>{{ i.status }}</td>
+            </tr>
+        {% endfor %}
+        <!-- Add more rows as needed -->
+    </table>
+    <!-- Add more announcements as needed -->
+</div>
+</body>
+</html>
+{% endblock %}

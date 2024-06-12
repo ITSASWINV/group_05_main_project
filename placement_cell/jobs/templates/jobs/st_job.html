@@ -1,0 +1,44 @@
+{% extends 'temp/student_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+
+</head>
+<body>
+
+<table border="1"  class="table table-borderless table-striped table-dark">
+    <thead>
+        <tr>
+            <th>Job Title</th>
+            <th>Company Name</th>
+            <th>Skills</th>
+            <th>Salary</th>
+            <th>Location</th>
+            <th>Job Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in a %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.company.name }}</td>
+            <td>{{ i.skills }}</td>
+            <td>{{ i.compensation }}</td>
+            <td>{{ i.location }}</td>
+            <td>{{ i.description }}</td>
+            <td><a href="/applications/post_app/{{ i.job_id }}" class="btn btn-info">Apply</a> </td>
+        </tr>
+        {% endfor %}
+
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+</body>
+</html>
+{% endblock %}

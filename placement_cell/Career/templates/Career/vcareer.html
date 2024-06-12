@@ -1,0 +1,29 @@
+{% extends 'temp/admin_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>career</title>
+</head>
+<body>
+	<center>
+		<h1>VIEW_CAREER</h1>
+		<table border="2" class="table table-striped table-dark table-borderless">
+			<tr>
+				<td>STUDENT_NAME</td>
+				<td>DEPARTMENT</td>
+				<td>PREDICTION</td>
+			</tr>
+            {% for i in x %}
+            <tr>
+				<td>{{ i.student.name }}</td>
+				<td>{{ i.student.department }}</td>
+				<td>{{ i.career}}</td>
+			</tr>
+             {% endfor %}
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

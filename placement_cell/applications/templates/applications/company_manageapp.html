@@ -1,0 +1,43 @@
+{% extends 'temp/company_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Applications</title>
+
+</head>
+<body>
+<h2>Student Applications</h2>
+<table border="1"  class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Job Name</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+          {% for i in b %}
+        <tr>
+            <td>{{ i.student.name }}</td>
+            <td>{{ i.job.name }}</td>
+            <td>{{ i.status }}</td>
+            <td>{{ i.date }}</td>
+            <td>{{ i.time }}</td>
+          <td><a href="/applications/accept/{{ i.application_id }}" class="btn btn-success btn-sm">Accept</a> </td>
+                    <td><a href="/applications/reject/{{ i.application_id }}" class="btn btn-success btn-sm">Reject</a> </td>
+        </tr>
+        {% endfor %}
+
+
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'temp/company_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Jobs</title>
+</head>
+<body>
+
+<div>
+    <h1>Add Jobs</h1>
+    <form method="post" class="m-4">
+        {% csrf_token %}
+        <table>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter job name" required="" class="form-control"><br>
+
+        <label for="role">Role:</label><br>
+        <input type="text" id="role" name="role" placeholder="Enter role" required="" class="form-control"><br>
+
+        <label for="skills">Skills:</label><br>
+        <input type="text" id="skills" name="skills" placeholder="Enter required skills" required="" class="form-control"><br>
+
+        <label for="compensation">Compensation:</label><br>
+        <input type="number" id="compensation" name="compensation" placeholder="Enter compensation" required="" class="form-control"><br>
+
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location" placeholder="Enter job location" required="" class="form-control"><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" placeholder="Enter job description" required="" class="form-control"></textarea><br>
+
+        <input type="submit" value="Submit" class="btn btn-success">
+            </table>
+    </form>
+</div>
+
+</body>
+</html>
+{% endblock %}

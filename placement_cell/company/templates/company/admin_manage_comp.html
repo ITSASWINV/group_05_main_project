@@ -1,0 +1,41 @@
+{% extends 'temp/admin_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+
+</head>
+
+<body>
+    <table border="1"  class="table table-borderless table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>About</th>
+                <th>Mail</th>
+                <th>Phone</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in a %}
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.about }}</td>
+                <td>{{ i.mail }}</td>
+                <td>{{ i.phone }}</td>
+                <td>{{ i.status }}</td>
+                    <td><a href="/company/accept/{{ i.company_id }}" class="btn btn-success btn-sm">Accept</a> </td>
+                    <td><a href="/company/reject/{{ i.company_id }}" class="btn btn-danger btn-sm">Reject</a> </td>
+            </tr>
+             {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
+{% endblock %}

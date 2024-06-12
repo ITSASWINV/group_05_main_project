@@ -1,0 +1,50 @@
+{% extends 'temp/alumini_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Page</title>
+
+</head>
+
+<body>
+    <table border="1"  class="table table-borderless table-striped table-dark">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Semester</th>
+                <th>CGPA</th>
+                <th>Certifications</th>
+{#                <th>Applied Jobs</th>#}
+                <th>Mail</th>
+                <th>Phone</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in a %}
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.department }}</td>
+                <td>{{ i.semester }}</td>
+                <td>{{ i.cgpa }}</td>
+                <td>{{ i.certificates }}</td>
+{#                <td>{{ i.applied_jobs }}</td>#}
+                <td>{{ i.mail }}</td>
+                <td>{{ i.phone }}</td>
+                <td>{{ i.status }}</td>
+{#                    <td><a href="/student/accept/{{ i.student_id }}">Accept</a> </td>#}
+{#                    <td><a href="/student/reject/{{ i.student_id }}">Reject</a> </td>#}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+{% endblock %}

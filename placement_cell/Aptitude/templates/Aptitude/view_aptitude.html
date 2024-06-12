@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>aptitude</title>
+</head>
+<body>
+	<center>
+		<h1>VIEW_APTITUDE</h1>
+		<table border="2">
+			<tr>
+				<td>STUDENT NAME</td>
+				<td>DATE</td>
+				<td>TIME</td>
+{#				<td>PDF</td>#}
+			</tr>
+            {% for i in aa %}
+            <tr>
+				<td>{{ i.st.student_name }}</td>
+				<td>{{ i.date }}</td>
+				<td>{{ i.time }}</td>
+{#                <td>{{ i.pdf }}</td>#}
+			</tr>
+            {% endfor %}
+
+		</table>
+	</center>
+
+</body>
+</html>

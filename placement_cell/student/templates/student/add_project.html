@@ -1,0 +1,75 @@
+{% extends 'temp/student_page.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    h2 {
+        text-align: center;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+    button.download {
+        margin-top: 10px;
+        background-color: #28a745;
+    }
+</style>
+</head>
+<body>
+
+    <h2>Add Project</h2>
+<form method="POST" >
+    {% csrf_token %}
+    <label for="name">Title:</label>
+    <input type="text" id="name" name="name" required class="form-control">
+    
+
+     <label for="skill">Description:</label>
+    <textarea rows="8" cols="30" required class="form-control" name="skill"></textarea>
+
+    <button type="submit">Register</button>
+{#    <button type="button" class="download" id="downloadResume">Download Resume</button>#}
+</form>
+
+
+
+</body>
+</html>
+{% endblock %}
